@@ -1,0 +1,128 @@
+.header-active-button:hover{
+    background-color:#3751FF !important;
+    color: #fff !important;
+}
+.logo-design{
+    padding-right: 30px !important;
+    width: 170px !important;
+}
+.header-active-button{
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    height: 40px;
+    padding: 8.5px 1.25rem;
+    font-size: 14px;
+    border-radius: 0.625rem;
+    color: #455560;
+    background: #F5F6F8;
+    border-color: #e6ebf1;
+    margin: 0 4px;
+    width: 13%;
+}
+.header-width-button{
+    margin: 0 0 0 9px;
+}
+.resource{
+    font-size: 12px;
+}
+/* .toggle-menu{
+    display: none;
+} */
+.button-responsive{
+    display: none;
+}
+.header-active-button-toggle{
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    height: 40px;
+    padding: 8.5px 1.25rem;
+    font-size: 14px;
+    border-radius: 0.625rem;
+    color: #455560;
+    background: #F5F6F8;
+    border-color: #e6ebf1;
+    margin: 0px !important;
+}
+.profile-arrow{
+    position: absolute;
+    bottom: 8px;
+    left: 42px;
+}
+@media  screen and (max-width:600px)  {
+.button-responsive{
+   display: block;
+    }
+    .logo-design{
+        display: none;
+    }
+    .menues{
+        text-align: center;
+    }
+}
+@media screen and (max-width:900px){
+    .button-responsive{
+        display: block;
+    }
+}
+@media  screen and (max-width:768px)  {
+    /* .button-responsive{
+       display: block;
+    } */
+    .menues{
+        text-align: center;
+    }
+}
+    @media  screen and (max-width:768px)  {
+        .header_nav{
+            display: none;
+        }
+        .menues{
+            text-align: center;
+        }
+}
+@media only screen and (max-width: 767px) {
+    .header_nav{
+        display: none;
+    }
+    .menues{
+        text-align: center;
+    }
+}
+@media only screen and  (min-width: 769px) and (max-width: 1024px) {
+    .header-active-button{
+        padding: 8.5px 0px;
+        font-size: 12px;
+    }
+    .logo-design{
+        width: 150px !important;
+    }
+    /* .toggle-menu{
+        display: none;
+         } */
+}

@@ -1,0 +1,25 @@
+.far-part{
+    background-color: #3751FF;
+    color: #fff !important;
+}
+.far-list-style{
+    display: flex;
+    list-style: none;
+    padding: 3px;
+    justify-content: space-between;
+}
+.far-list-style li{
+    padding: 0px 10px;
+    border-radius: 3px;
+    background-color: #F3F3F3;
+}
+.list-style-none{
+    padding: 0px;
+}
+.list-style-none li{
+    padding: 10px;
+}
+.far-link{
+    padding: 10px;
+    background-color: #3751FF;
+}

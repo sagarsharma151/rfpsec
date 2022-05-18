@@ -1,0 +1,164 @@
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+    background-color: #3751FF !important;
+    color: #fff;
+}
+.tabpannel, .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+    text-shadow: currentcolor 0px 0px 0.25px;
+}
+.heading-advance{
+    background-color: #3751FF;
+    color: #fff;
+    padding: 5px;
+}
+.vertical-border{
+    border-right: 1px solid #334D6E;    
+}
+.back-button{
+    background-color: #FFF;
+}
+.more-plus{
+    background-color: #F5FAFF;
+}
+.advance-table-font, tr, th, a{
+    color: #334D6E;
+    font-weight: 400;
+}
+.business-type{
+    background-color: #334D6E;
+    color: #fff;
+    text-align: center;
+}
+.business-type p{
+    color: #fff;
+    text-align: center;
+}
+.input-color{
+    background-color: #fff;
+}
+.corporate-entry{
+    background-color: #DCE0FF !important;
+}
+.menuContainer panel:hover
+.menuContainer panel.active {
+  color: #f1f1f1;
+  transition: 0.3s;
+}
+.image-paint{
+    width: -webkit-fill-available;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.collapse-color{
+    background-color:#DCE0FF !important;
+}
+.card-color{
+    background-color:#DCE0FF !important;
+}
+.list-padding-remove{
+    padding: 0px !important;
+    margin-left: 10px !important;
+}
+.background-color{
+    background-color:#DCE0FF;
+}
+.contract-action-button{
+    background-color: #E5E5E5 !important;
+    text-align: left;
+}
+.inner-collapse {
+    background-color: #FFF;
+    color: #8C9BAD !important;
+}
+.date-backgrounds{
+    background-color: #E9E9E9;
+}
+.expand-number{
+    background-color: #FFF;
+    border-radius: 50%;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 22px;
+}
+.experiance-table{
+    padding: 2px 34px;
+}
+.left-border-collapse{
+    border-left: 1px dashed;
+}
+.award-details-pad{
+    padding: 2px 40px;
+}
+.show-hide-button{
+    float: right;
+    margin-right: 10px;
+}
+.favorite{
+   color: #FBBC3D;
+}
+.favoriteactive:focus{
+    background-color: #FBBC3D;
+}
+.Capability{
+    padding-left: 20px;
+    margin-right: 20px;
+}
+.Contract-Pricing{
+    text-align: center;
+    display: flex;
+    float: right;
+}
+@media  screen and (max-width:320px)  {
+    .Group{
+        display: block !important;
+    }
+    .Labor-Hours{
+        display: block !important;
+    }
+    .Parent-Contract{
+        display: none;
+    }
+    .table-responsive{
+        overflow-x: auto;
+    }
+    .Capability{
+        border-right: none;
+    }
+}
+
+@media  screen and (max-width:768px)  {
+    .teaming-profile{
+        display: block !important;
+    }
+    .responsive-header{
+        overflow-x: auto;
+    }
+    .Capability{
+        padding-left: 0px !important;
+        border-right: 0px !important;
+    }
+    .Contract-Pricing{
+        float: left;
+    }
+    .table-responsive{
+        overflow-x: auto;
+    }
+    
+}
+
+@media  screen and (min-width:768px) and (max-width: 1024px)  {
+    
+}
+@media only screen and  (min-width: 768px) and (max-width: 1024px) {
+    .table-responsive{
+        overflow-x: auto;
+    }
+    .image-paint{
+        width: 120px;
+    }
+    .teaming-profile{
+        display: block !important;
+    }
+}

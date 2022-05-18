@@ -1,0 +1,1 @@
+export const BaseUrl  = 'http://rfpintels-services.eastus.cloudapp.azure.com/userservices/api';

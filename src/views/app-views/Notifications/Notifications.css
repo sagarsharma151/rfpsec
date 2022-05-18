@@ -1,0 +1,16 @@
+.notification_first_icon{
+    font-size: 25px;
+    margin: 1px 12px 0px 10px;
+}
+.notification_first_row_inside_card{
+    color: #334d6e;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 0px 0px 19px;
+}
+.notification_first_row_Para_inside_card{
+    color: #334d6e;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0px 0px 0px 19px;
+}

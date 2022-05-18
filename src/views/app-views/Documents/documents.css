@@ -1,0 +1,53 @@
+.search-input-color,.ant-input{
+    background-color: rgb(233, 236, 241) !important;
+}
+.list-style-none{
+    list-style: none;
+}
+.Government-background{
+    background-color: #334D6E;
+    color: #fff !important;
+}
+.text-light{
+    color: #fff;
+}
+.icon-color{
+    color: #334D6E;
+}
+.upload_contant_div{
+    border: 2px dashed #e1e7e9;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+    ;
+    text-align: center; 
+    width: 100%;
+    justify-content: center;
+    padding: 30px;
+    cursor: pointer;
+}
+/* .upload_contant_div:hover{
+    border: 2px solid #999;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+} */
+.table-striped-rows tr:nth-child(2n) td {
+    background-color: #F3F3F3;
+    padding: 20px;
+}
+.table-striped-rows tr td{
+    padding: 15px !important;
+}
+.table-striped-rows thead tr th {
+    background-color: #3751FF;
+    color: #fff !important;
+}
+.open-background{
+    background-color: #DEE2FF;
+}
+.download-button{
+    background-color: #3751FF;
+    padding: 12px 5px;
+    color: #fff; 
+    border-radius: 15px;
+}

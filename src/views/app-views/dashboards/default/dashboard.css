@@ -1,0 +1,17 @@
+.ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: black !important;
+    text-shadow: currentcolor 0px 0px 0.25px;
+    font-weight: bold;
+}
+.card-font-change,.ant-tabs{
+    color: #A4ACB6;
+}
+.card-font-change,.ant-tabs-tab:hover{
+    color: #A4ACB6;
+}
+.dashboard-size{
+    font-weight: bold;
+}
+.search-input-color,.ant-input{
+    background-color: rgb(233, 236, 241) !important;
+}

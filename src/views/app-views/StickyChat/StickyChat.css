@@ -1,0 +1,322 @@
+.chatpage_first_col{
+    display: flex;
+    justify-content: space-between;
+}
+.firstpart_of_chat{
+    height: 800px;
+     overflow: scroll;
+     overflow-x: hidden;
+}
+.chats_dropdown_button{
+    color: #707c97;
+}
+.chatfirstcol_card{
+    display: flex;
+    justify-content: space-between;
+}
+.stickychat_first_col_render{
+    width: 100%;
+    border-radius: 8px;
+
+}
+/* .stickychat_first_col_render :hover{
+   background-color: #3751ff;
+
+} */
+
+.david_amrosa_div{
+   
+    height: 37px;
+    width: 110px;
+    background-color: rgba(0, 195, 5, 0.25);
+    border-radius: 20px;
+    padding: 5px 5px 0px 7px;
+    display: flex;
+    justify-content: space-around;
+    color: #00c305;
+}
+.david_amrosa_div_jared{
+    height: 37px;
+    width: 110px;
+    background-color: rgba(42, 139, 242, 0.25);
+    border-radius: 20px;
+    padding: 5px 5px 0px 7px;
+    display: flex;
+    justify-content: space-around;
+    color: #3751ff;
+}
+.david_amrosa_div_jared2{
+    height: 37px;
+    width: 110px;
+    background-color: rgba(255, 51, 102, 0.25);
+    border-radius: 20px;
+    padding: 5px 5px 0px 7px;
+    display: flex;
+    justify-content: space-around;
+    color: #ff3366;
+    margin: 0px 0px 0px 10px;
+}
+.CloudServerOutlined_icon_jared{
+    font-size: 18px;
+}
+.CloudServerOutlined_icon{
+    font-size: 18px;
+}
+
+.sticky_chat_first_card{
+    margin: auto;
+    width: 97%;
+    background-color: #fafbff;
+    padding: 20px 0px 20px 34px;
+    border-bottom: 1px solid rgba(112, 124, 151, 0.1);
+}
+.sticky_chat_first_card_chat_box{
+    margin: auto;
+    width: 97%;
+    height: fit-content;
+    background-color: #fafbff;
+    padding: 20px 0px 20px 34px;
+    border-bottom: 1px solid rgba(112, 124, 151, 0.1) !important;
+}
+.sticky_chat_first_div_inside{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.inside_first_chat_inbox{
+    height: 40px;
+    width: 70%;
+    background-color: #3751ff;
+    border-radius: 0px 0px 0px 0px;
+}
+.sticky_first_chat_img{
+    width:30px;
+    height: 30px;
+    /* border: 1px solid #fafbff; */
+    border-radius: 10px;
+}
+.sticky_first_chat_img_chating{
+    width: 15px !important;
+    height: 15px !important;
+    border: 1px solid #fafbff;
+    border-radius: 10px;
+}
+.firstimg_dirimg{
+    width:55px ;
+    height: 55px;
+    border-radius: 50%;
+}
+.firstimg_dirimg_chat{
+    width:30px ;
+    height: 30px;
+    border-radius: 50%;
+}
+.nick_chat_ellipsis{
+    font-size: 30px;
+    margin: 7px 0px 0px 10px;
+}
+.nick_chat_ellipsis_ni{
+    font-size: 20px;
+    margin: 37px 0px 0px 10px;
+}
+.chating_box_withconversation{
+    width:100%;
+    height: 55px;
+    background-color: #3751ff;
+    border-radius: 0px 10px 10px 10px ;
+    padding: 3px 0px 0px 16px;
+}
+.chating_box_withconversation1{
+    display: flex;
+    width:39%;
+    height: 36px;
+    background-color: #3751ff;
+    border-radius: 0px 10px 10px 10px ;
+    padding: 3px 0px 0px 16px;
+    margin-top: 10px;
+}
+.can_i_send_div{
+    margin: 12px 0px 0px 20px;
+    font-size: 20px;
+}
+.can_i_send_div1{
+    margin: 7px 12px 0px 14px;
+    font-size: 20px;
+}
+.can_i_send_div2{
+    margin: 31px 12px 0px 14px;
+    font-size: 20px;
+}
+
+.before_chating_box_withconversation1{
+    display: flex;
+}
+.days_ago4{
+    font-size: 12px;
+    margin: 3px 0px 0px 100px;   
+
+}
+.days_ago4sec{
+    font-size: 12px;
+    margin: 3px 0px 0px 80px; 
+}
+.days_ago4_next{
+    font-size: 12px;
+    margin: 15px 0px 0px 45px;  
+    float: right;
+}
+.days_ago4_next1{
+    font-size: 12px;
+    
+    text-align: right;
+    margin: 4px 11px 0px 0px;
+}
+.response_from_other_server{
+    display: flex;
+}
+.chating_box_withconversation1>  p{
+    color: #FFFFFF;
+}
+.specical_para{
+    color: #707c97;
+    margin-bottom: 0px;
+}
+
+.chating_box_withconversation_zip{
+    display: flex;
+    width:97%;
+    height: 76px;
+    background-color: #3751ff;
+    border-radius: 0px 10px 10px 10px ;
+    padding: 3px 0px 0px 16px;
+    margin-top: 10px;
+}
+.new_zip_icon{
+    width:48px;
+    height: 48px;
+    border:1px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 9px 0px 0px 0px;
+    padding: 1px 0px 0px 8px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.style_zip_fileoutlined{
+    color: #FFFFFF;
+}
+.after_style_zip_fileoutlined{
+    color: rgba(255, 255, 255, 0.7);
+}
+.hey_okay_send_out_div{
+    width: 152px;
+    height: 45px;
+    border: 3px solid rgba(112, 124, 151, 0.1);
+    border-radius: 9px 9px 0px 9px;
+    background-color: #FFFFFF;
+    padding: 8px 0px 0px 11px;
+    font-size: 14px;
+    color: #707c97;
+    
+}
+.sdfsdfdwith123{
+    float: right;
+    margin-right: 25px !important;
+    color: #3751ff;
+}
+.hey_okay_send_out_div_div{
+    width: 310px;
+    height: 93px;
+    border: 3px solid rgba(112, 124, 151, 0.1);
+    border-radius: 9px 9px 0px 9px;
+    background-color: #FFFFFF;
+    padding: 8px 0px 0px 11px;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.chating_box_withconversation> p{
+    color: #FFFFFF;
+}
+.nika_first_img_div{
+    display: flex;
+    margin: 0px 0px 0px 0px;
+}
+.nika_jerrardo_name{
+    margin: 3px 0px 0px 45px;
+    font-size: 18px;
+    color: #0d1c2e;
+    font-weight: 500;
+}
+.nika_para{
+    font-size: 16px;
+    color: #3751ff;
+    margin: 5px 0px 0px 45px;
+}
+.paperclip_nika_icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    
+    padding: 9px 0px;
+}
+.commondiv_icon{
+    display: flex;
+    padding: 5px 50px 0px 0px;
+}
+.Last_plusoutlines{
+    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #3751ff;
+    color: #FFFFFF;
+    padding: 5px 0px 0px 9px;
+    float: right;
+     margin: 2px 10px 0px 0px; 
+}
+.Last_plusoutlines1{
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #707c97;
+    padding: 5px 0px 0px 9px;
+    float: left;
+    margin: 2px 10px 0px 0px; 
+}
+.Last_plusoutlines2{
+    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #3751ff;
+    color: #FFFFFF;
+    padding: 5px 0px 0px 9px;
+    float: left;
+     margin: 2px 10px 0px 0px; 
+}
+.adding_hide_show_concept{
+    display: flex;
+    flex-direction: column;
+}
+/* .anttable::-webkit-scrollbar-thumb {
+    background: #3751FF; 
+    border-radius: 15px;
+  }
+.anttable::-webkit-scrollbar {
+    width: 10px;
+    height: 90px !important;
+  } */
+.firstpart_of_chat::-webkit-scrollbar-thumb{
+    background: #b7bdcb; 
+    border-radius: 15px;
+}
+.firstpart_of_chat::-webkit-scrollbar {
+    width: 10px;
+    height: 90px !important;
+  } 
+

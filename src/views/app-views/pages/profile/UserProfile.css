@@ -1,0 +1,79 @@
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active{
+    background-color: #3751FF !important;
+    color: #fff;
+}
+.tabpannel, .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+    text-shadow: currentcolor 0px 0px 0.25px;
+}
+
+
+.Edit-button{
+    background-color: #E5E5E5 !important;
+    color: #494949;
+}
+.delete-button{
+    background-color:#FF8C00;
+    color: #fff;
+}
+.Pending{
+    color: #FF3737;
+}
+.Complete{
+    color: #048E2B;
+}
+.InProgress{
+    color: #FF8C00;
+    ;
+}
+.table-td-background{
+    background-color: #F5F6F8;
+    width: 70%;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    border: none !important;
+    background-color: #F5F6F8 !important
+}
+.select-drop{
+    width: -webkit-fill-available;
+}
+.option-drop.ant-select-selector{
+    background-color: #F5F6F8 !important;
+}
+table {
+    border-collapse: unset !important;
+}
+.setting-right-btn{
+    float: right;
+}
+.input-width{
+    width: 250% !important;
+    background-color: rgb(233, 236, 241) !important
+}
+.table-responsives{
+    overflow-x: auto !important;
+}
+.form-align-set{
+    flex-direction: row !important;
+    align-items: center;
+}
+.form-align-set label{
+    width: 200px !important;
+}
+.form-input-field{
+    margin-left: 10px;
+}
+
+@media  screen and (max-width:600px)  {
+    /* .table-td-background{
+        display: table-caption;
+    } */
+    /* .mobile-width{
+        width: 72px;
+    } */
+}
+    @media  screen and (max-width:768px)  {
+        /* .mobile-view{
+            padding: unset;
+        } */
+}

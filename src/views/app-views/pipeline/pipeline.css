@@ -1,0 +1,22 @@
+.view-button{
+    background-color: #334D6E !important;
+    color: #fff !important;
+}
+.delete-button{
+    background-color:#FF8C00 !important;
+    color: #fff !important;
+}
+.Pending{
+    color: #FF3737;
+}
+.Complete{
+    color: #048E2B;
+}
+.InProgress{
+    color: #FF8C00;
+    ;
+}
+/* tbody, .border-lef, .ant-table-row{
+    border-left: 3px solid #3751FF !important;
+    margin-bottom: 2px;
+} */

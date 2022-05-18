@@ -1,0 +1,9 @@
+/* .table-right{
+    float: left;
+} */
+.visibility-collapse{
+    visibility: collapse;
+}
+.ant-input-affix-wrapper{
+    background-color: rgb(233, 236, 241) !important;
+}
