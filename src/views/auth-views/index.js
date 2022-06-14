@@ -17,9 +17,18 @@ export const AppViews = ({math}) => {
         <Route path={`${AUTH_PREFIX_PATH}/forget-password`} component={lazy(() => import(`./authentication/forget-password`))} />
         <Route path={`${AUTH_PREFIX_PATH}/validation`} component={lazy(() => import(`./authentication/validation`))} />
         <Route path={`${AUTH_PREFIX_PATH}/loginValidation`} component={lazy(() => import(`./authentication/loginValidation`))} /> */}
+         <Route path={`${AUTH_PREFIX_PATH}/success`} component={lazy(() => import(`./authentication/contact/Contactmsg`))} />
+         <Route path={`${AUTH_PREFIX_PATH}/forgot-password`} component={lazy(() => import(`./authentication/forgot-password`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/forget-password`} component={lazy(() => import(`./authentication/forget-password`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/validation`} component={lazy(() => import(`./authentication/validation`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/loginValidation`} component={lazy(() => import(`./authentication/loginValidation`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/userservices/api/register`} component={lazy(() => import(`./authentication/register-2/Multistep`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/contact`} component={lazy(() => import(`./authentication/contact/Contact`))} />
+        <Redirect from={`${AUTH_PREFIX_PATH}`} to={`${AUTH_PREFIX_PATH}/userservices/api/register`} />
         <Route path={`${AUTH_PREFIX_PATH}/error-1`} component={lazy(() => import(`./errors/error-page-1`))} />
         <Route path={`${AUTH_PREFIX_PATH}/error-2`} component={lazy(() => import(`./errors/error-page-2`))} />
         <Redirect from={`${AUTH_PREFIX_PATH}`} to={`${AUTH_PREFIX_PATH}/login`} />
+
       </Switch>
     </Suspense>
   )

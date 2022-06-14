@@ -1,5 +1,6 @@
 
 import fetch from 'auth/FetchInterceptor';
+import fetchsignup from 'auth/SignupInterceptor'
 import Fetchdata from 'auth/SendlinkInterceptor'
 import Forgotdata from 'auth/forgotInterceptor'
 import { BaseUrl } from './BaseurlConst';
@@ -24,13 +25,26 @@ JwtAuthService.sendLink = function (data) {
 JwtAuthService.login = function (data) {
 	console.log('data',data)
 	return fetch({
-		url: BaseUrl + '/auth/login',
+		url: BaseUrl + '/api/auth/login',
 		method: 'post',
 		headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 		},
 		data: data
+	})
+}
+
+JwtAuthService.getSubscriptionPlan = function (data) {
+	return fetchsignup({
+		url: 'http://rfpintels-services.eastus.cloudapp.azure.com/userservices/subscriptionPlans/ListOfSubscriptionPlan',
+		method: 'GET',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+		},
+		data: data
+		
 	})
 }
 
@@ -60,13 +74,41 @@ JwtAuthService.loginverify = function (data) {
 
 
 JwtAuthService.signUp = function (data) {
-	return fetch({
-		url: BaseUrl + `/auth/register?token=${data.token}&emailId=${data.email}`,
-		method: 'POST',
+	console.log(data,'ddljfldsjfjdsdsfjldjfldsjlfjsdljsignUp')
+	return fetchsignup({
+		url: "http://rfpintels-services.eastus.cloudapp.azure.com/userservices/api/auth/register",
+		method: 'post',
 		headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
-			'Authorization':`Bearer ${data.token}`
+			// 'Authorization':`Bearer ${data.token}`
+		},
+		data: data
+	})
+}
+JwtAuthService.contact = function (data) {
+	console.log(data,'http://rfpintels-services.eastus.cloudapp.azure.com/userservices/subscriptionPlans/contact')
+	return fetchsignup({
+		url: "http://rfpintels-services.eastus.cloudapp.azure.com/userservices/subscriptionPlans/contact",
+		method: 'post',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			// 'Authorization':`Bearer ${data.token}`
+		},
+		data: data
+	})
+}
+
+JwtAuthService.allplans = function (data) {
+	console.log(data,'ddljfldsjfjdsdsfjldjfldsjlfjsdlj')
+	return fetchsignup({
+		url: "http://rfpintels-services.eastus.cloudapp.azure.com/userservices/payment/payNow",
+		method: 'post',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			// 'Authorization':`Bearer ${data.token}`
 		},
 		data: data
 	})
@@ -171,7 +213,6 @@ JwtAuthService.profileAddUser = function (data) {
 }
 
 JwtAuthService.getProfileAddUsers = function (data) {
-	console.log(data,'data111111111111111')
 	return fetch({
 		url: 'http://rfpintels-services.eastus.cloudapp.azure.com/userservices/user/getAllUser',
 		method: 'GET',
@@ -184,6 +225,28 @@ JwtAuthService.getProfileAddUsers = function (data) {
 	})
 }
 
+JwtAuthService.getSubscriptionPlan = function (data) {
+	return fetchsignup({
+		url: 'http://rfpintels-services.eastus.cloudapp.azure.com/userservices/subscriptionPlans/ListOfSubscriptionPlan',
+		method: 'GET',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+		},
+		data: data
+		
+	})
+}
+
+// JwtAuthService.stateUpdate = function (data) {
+// 	console.log(data,'data9999999999999999999999999')
+
+// 	console.log(data,'payloadRequest')
+	
+	
+// 		return  data
+	
+// }
 JwtAuthService.updateAddProfile = function (data) {
 	console.log(data,'data9999999999999999999999999')
 	const payloadRequest = {

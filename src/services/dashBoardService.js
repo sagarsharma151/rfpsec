@@ -1,4 +1,5 @@
 import fetch from "auth/FetchInterceptor";
+import fetchsignup from 'auth/SignupInterceptor'
 import { BaseUrl } from "./BaseurlConst";
 
 
@@ -64,5 +65,16 @@ dashBoardService.TeamingAlerts = function (data) {
 	})
 }
 
-
+// dashBoardService.signUp = function (data) {
+// 	return fetchsignup({
+// 		url: "http://rfpintels-services.eastus.cloudapp.azure.com/userservices/api/auth/register",
+// 		method: 'post',
+// 		headers: {
+// 			'Accept': 'application/json',
+// 			'Content-Type': 'application/json',
+// 			// 'Authorization':`Bearer ${data.token}`
+// 		},
+// 		data: data
+// 	})
+// }
 export default dashBoardService

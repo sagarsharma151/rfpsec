@@ -8,7 +8,7 @@ import {
   SIGNUP,
   SIGNUP_SUCCESS,
   SHOW_LOADING,
-  SIGNUP_FAIED,
+  SIGNUP_FAILED,
   VERIFY,
   VERIFY_SUCCESS,
   VERIFY_FAILED,
@@ -29,8 +29,14 @@ import {
   GET_PROFILE_SUCCESS,
   GET_PROFILE_FAILED,
   SEND_MAIL_LINK_SUCCESS,
-} from '../constants/Auth';
+  PLANS,
+  PLANS_SUCCESS,
+  PLANS_FAILED,
+  CONTACT,
+  CONTACT_SUCCESS,
+  CONTACT_FAILED
 
+} from '../constants/Auth';
 export const signIn = (user) => {
   return {
     type: SIGNIN,
@@ -70,17 +76,57 @@ export const signUp = (user) => {
   };
 };
 
-export const signUpSuccess = (token) => {
+export const signUpSuccess = (user) => {
   return {
     type: SIGNUP_SUCCESS,
-    token
+    user
   };
 };
 export const signUpFailed = () => {
   return {
-    type: SIGNUP_FAIED,
+    type: SIGNUP_FAILED,
   };
 };
+
+export const contact = (user) => {
+  return {
+    type: CONTACT,
+    payload: user
+  };
+};
+
+export const contactSuccess = (user) => {
+  return {
+    type: CONTACT_SUCCESS,
+    user
+  };
+};
+export const contactFailed = () => {
+  return {
+    type: CONTACT_FAILED,
+  };
+};
+
+export const Plans = (user) => {
+  console.log(user,'userplan')
+  return {
+    type: PLANS,
+    payload: user
+  };
+};
+
+export const PlansSuccess = (user) => {
+  return {
+    type: PLANS_SUCCESS,
+    user
+  };
+};
+export const PlansFailed = () => {
+  return {
+    type: PLANS_FAILED,
+  };
+};
+
 
 export const verified = (user) => {
   return {

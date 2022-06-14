@@ -4,9 +4,13 @@ import {
 	SHOW_AUTH_MESSAGE,
 	HIDE_AUTH_MESSAGE,
 	SIGNOUT_SUCCESS,
+	SIGNUP,
 	SIGNUP_SUCCESS,
 	SHOW_LOADING,
-	SIGNUP_FAIED,
+	SIGNUP_FAILED,
+	PLANS,
+	PLANS_SUCCESS,
+	PLANS_FAILED,
 	VERIFY,
 	SEND_MAIL_LINK_SUCCESS,
 	VERIFY_SUCCESS,
@@ -26,7 +30,10 @@ import {
 	UPDATE_PROFILE_FAILED,
 	GET_PROFILE,
 	GET_PROFILE_SUCCESS,
-	GET_PROFILE_FAILED
+	GET_PROFILE_FAILED,
+	CONTACT,
+	CONTACT_SUCCESS,
+	CONTACT_FAILED
 } from '../constants/Auth';
 
 const initState = {
@@ -40,9 +47,11 @@ const initState = {
 	email: '',
 	user: '',
 	profile: '',
+	
 }
 
 const auth = (state = initState, action) => {
+	console.log(action,'actionuser')
 	switch (action.type) {
 		case AUTHENTICATED:
 			return {
@@ -72,20 +81,70 @@ const auth = (state = initState, action) => {
 				loading: false
 			}
 		}
+		case SIGNUP:{
+			return {
+				...state,
+				loading: true,
+				user: [],
+			}
+		}
 		case SIGNUP_SUCCESS: {
 			return {
 				...state,
 				loading: false,
-				token: action.token
+				user: action.payload
 			}
 		}
-		case SIGNUP_FAIED: {
+		case SIGNUP_FAILED: {
 			return {
 				...state,
 				loading: false,
 				err: action.error
 			}
 		}
+		case CONTACT:{
+			return {
+				...state,
+				loading: true,
+				user: [],
+			}
+		}
+		case CONTACT_SUCCESS: {
+			return {
+				...state,
+				loading: false,
+				user: action.payload
+			}
+		}
+		case CONTACT_FAILED: {
+			return {
+				...state,
+				loading: false,
+				err: action.error
+			}
+		}
+		case PLANS:{
+			return {
+				...state,
+				loading: true,
+				user: [],
+			}
+		}
+		case PLANS_SUCCESS: {
+			return {
+				...state,
+				loading: false,
+				user: action.payload
+			}
+		}
+		case PLANS_FAILED: {
+			return {
+				...state,
+				loading: false,
+				err: action.error
+			}
+		}
+	
 		case VERIFY: {
 			return {
 				...state,

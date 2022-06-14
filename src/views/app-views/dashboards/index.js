@@ -8,7 +8,7 @@ const Dashboards = ({ match }) => {
     <Switch>
       <Route path={`${match.url}/default`} component={lazy(() => import(`./default`))} />
       <Route path={`${match.url}/data`} component={lazy(() => import(`./AdminData`))} />
-      <Route path={`${match.url}/stripe`} component={lazy(()=> import(`./Stripe`))} />
+      {/* <Route path={`${match.url}/stripe`} component={lazy(()=> import(`./Stripe`))} /> */}
       <Route path={`${match.url}/analytic`} component={lazy(() => import(`../liveopportunities/analytic`))} />
       <Route path={`${match.url}/sales`} component={lazy(() => import(`./sales`))} />
       {/* <Route path={`${match.url}/register-1`} component={lazy(() => import(`../../auth-views/authentication/register-1/index`))} />

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useState, useEffect,useContext } from 'react'
+import { connect,useSelector,useDispatch } from 'react-redux'
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Button, Form, Input, Alert, Checkbox } from "antd";
 import { signUp, showAuthMessage, showLoading, hideAuthMessage } from 'redux/actions/Auth';
+import { SignUpData} from 'redux/actions/profile';
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion"
-
+var CryptoJS = require("crypto-js");
 const rules = {
 	email: [
 		{
@@ -40,13 +42,24 @@ const rules = {
 				return Promise.reject('Passwords do not match!');
 			},
 		})
-	]
+	],
+	plan: [
+		{
+			required: true,
+			message: 'Please input your plan'
+		},
+	
+	],
 }
 
 export const RegisterForm = (props) => {
-	console.log("register...",props)
-
-	const { signUp, showLoading, loading, message, showMessage } = props
+	const data = useSelector(state=>state.profile.user.payload)
+	const userState = useSelector(state=>state.Userstate.user.payload)
+	const dispatch = useDispatch();
+	console.log("register..detailsdetailsdetailsuserStateuserStateuserStateuserState.",props)
+const [datasubmit,setDatasubmit] = useState({});
+const [alldata,setAlldata]=useState(false)
+	const { showLoading, loading, message, showMessage } = props
 	const [form] = Form.useForm();
 	const history = useHistory();
 	const initialCredential = {
@@ -55,12 +68,16 @@ export const RegisterForm = (props) => {
 		profileimage:'',
 		ip_address:'',
 		role:'',
-		
-		password: ''
+		planName:data,
+		password: '',
+		maximumUserAllowed:userState,
+		licenceType:''
 	}
 
 	const onSignUp = (e) => {
+		// e.preventDefault();
 		form.validateFields().then(values => {
+			console.log(values,'values5555555')
 			showLoading()
 			values.mobile_number = '1234567890';
 			values.profileimage = '1234';
@@ -72,23 +89,39 @@ export const RegisterForm = (props) => {
 				'lastName': values.last_name,
 				'componyName': values.company_name,
 				'email': values.email,
-				'password': values.password,
+				'password':values.password,
 				// 'confirm_password': values.confirm_password,
 				// "mobile_number": 1234567890,
 				// "profileimage": 1234,
 				// "ip_address": "",
-				"roleName": "company",
+				"roleName": "USER",
 				"userName":"vikalp",
 				"title":"The hero",
 				"officeNumber":"999612746813",
 				"cellNumber":"82y3948623956",
-				"licenceType":"823 798723"
+				"planName":data,
+				"maximumUserAllowed":userState,
+				'licenceType':'545454545',
+				"billingCycle":"Monthly"
 			}
+			console.log('Encrypt Data -',signUpRequest.password)
+			// CryptoJS.AES.encrypt(JSON.stringify(values.password), 'my-secret-key@123').toString(),
+			// const bytes = CryptoJS.AES.decrypt(signUpRequest.password, 'my-secret-key@123');
+			// const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+		  
+			//log decrypted Data
+			// console.log('decrypted Data -')
+			// console.log(decryptedData);
 			const allRequest = {
 				request: signUpRequest,
 				route: history,
 			}
-			signUp(allRequest)
+			setDatasubmit(signUpRequest)
+			localStorage.setItem('SignUpData', JSON.stringify(signUpRequest));
+			SignUpData(allRequest)
+			if(allRequest){
+				dispatch(signUp(allRequest))
+			}
 			// form.resetFields()
 		}).catch(info => {
 			console.log('Validate Failed:', info);
@@ -106,8 +139,17 @@ export const RegisterForm = (props) => {
 		setSignUpForm(signUpForm);
 	}
 
-	
-
+	const onFinishFailed = (errorInfo) => {
+		console.log('Failed:', errorInfo);
+	  };
+	  console.log(datasubmit,'signUpFormsignUpFormsignUpFormsignUpFormsignUpForm')
+	  console.log(initialCredential,'initialCredentialinitialCredentialinitialCredential')
+	  useEffect(()=>{
+		  if(datasubmit.cellNumber && datasubmit.firstName && datasubmit.componyName && datasubmit.email && datasubmit.lastName){
+			setAlldata(true)
+		  }
+	  },[datasubmit])
+	  console.log(alldata,'alssssssssssssssss')
 	return (
 		<>
 			<motion.div
@@ -118,7 +160,7 @@ export const RegisterForm = (props) => {
 				}}>
 				<Alert type="error" showIcon message={message}></Alert>
 			</motion.div>
-			<Form form={form} initialValues={initialCredential} layout="vertical" name="register-form" onFinish={onSignUp}>
+			<Form form={form} initialValues={initialCredential} layout="vertical" name="register-form" onFinishFailed={onFinishFailed} onFinish={onSignUp}>
 				<Form.Item
 					name="first_name"
 					label="First Name"
@@ -196,13 +238,35 @@ export const RegisterForm = (props) => {
 				>
 					<Input.Password required />
 				</Form.Item>
+		<div className='row d-flex'>
+			<div className='col-md-9'>		<Form.Item
+					name="planName"
+					label="Selected Plan"
+					autoComplete="none"
+					
+					hasFeedback
+					value={data}
+				>
+					<Input required disabled style={{color:'black'}}/>
+				</Form.Item></div>
+				<div className='col-md-3'>		<Form.Item
+					name="maximumUserAllowed"
+					label="users"
+					hasFeedback
+					value={userState}
+				>
+					<Input required disabled style={{color:'black'}}/>
+				</Form.Item></div>
+				<div><p onClick={props.prev} style={{color:'#1565D8',cursor:'pointer'}}>Change Plan</p></div>
+		</div>
 				<Form.Item name="remember" valuePropName="checked" onChange={(e) => onHandleChange(e)}
 					value={signUpForm.remember}>
 					<Checkbox>I agree to <a href="/#" onClick={e => e.preventDefault()}>terms & conditions</a></Checkbox>
 				</Form.Item>
 				<Form.Item>
-					<Button type="primary" htmlType="submit" block loading={loading}>
-						Registeddddr Account
+				{/* onClick={alldata ? props.next:''} */}
+					<Button type="primary" htmlType="submit" block  onClick={alldata ? props.next():null}>
+						Register Account
 					</Button>
 				</Form.Item>
 			</Form>
@@ -216,7 +280,6 @@ const mapStateToProps = ({ auth }) => {
 }
 
 const mapDispatchToProps = {
-	signUp,
 	showAuthMessage,
 	hideAuthMessage,
 	showLoading

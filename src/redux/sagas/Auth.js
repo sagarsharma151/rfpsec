@@ -10,9 +10,12 @@ import {
 	SEND_MAIL_LINK_SUCCESS,
 	SIGNOUT,
 	SIGNUP,
+	SIGNUP_DATA,
+	PLANS,
 	UPDATE_PROFILE,
 	VERIFY,
 	VERIFY_LOGIN,
+	CONTACT,
 } from '../constants/Auth';
 import {
 	showAuthMessage,
@@ -31,11 +34,17 @@ import {
 	updateProfileSuccess,
 	updateProfileFailed,
 	getProfileSuccess,
-	getProfileFailed
+	getProfileFailed,
+	PlansSuccess,
+	PlansFailed,
+	contactSuccess,
+	contactFailed
 } from "../actions/Auth";
+  
 import { notification } from 'antd';
 import FirebaseService from 'services/FirebaseService'
 import JwtAuthService from 'services/JwtAuthService';
+import dashBoardService from "services/dashBoardService";
 // import { useHistory } from 'react-router-dom';
 
 
@@ -111,12 +120,14 @@ export function* signOut() {
 export function* signUp() {
 	yield takeEvery(SIGNUP, function* ({ payload }) {
 		try {
+			console.log(payload.request,'payload-request')
 			const user = yield call(JwtAuthService.signUp, payload.request);
-			if (user.success===200) {
+			console.log(user,'user1444444444444444444444444444444444444444444444444444444444444444444444')
+			if (user) {
 				yield put(signUpSuccess(user));
-				// payload.route.push('/auth/validation', payload.request.email);
+				// payload.route.push('/app/dashboards');
 				notification['success']({
-					message: 'OTP Sent in your Email-Address',
+					message: 'User registered successfully',
 					description: '',
 				});
 			} else {
@@ -133,6 +144,63 @@ export function* signUp() {
 	});
 }
 
+export function* ContactApi() {
+	yield takeEvery(CONTACT, function* ({ payload }) {
+		try {
+			console.log(payload.request,'payload-request')
+			const user = yield call(JwtAuthService.contact, payload.request);
+			console.log(user,'CONTACTCONTACTCONTACTCONTACT')
+			if (user) {
+				yield put(contactSuccess(user));
+				payload.route.push('/auth/success');
+				notification['success']({
+					message: 'User registered successfully',
+					description: '',
+				});
+				
+			} else {
+				yield put(contactFailed(user.message));
+				notification['error']({
+					message: user.message,
+					description: '',
+				});
+			}
+		} catch (error) {
+			yield put(contactFailed(error));
+
+		}
+	});
+}
+
+export function* plan() {
+	yield takeEvery(PLANS, function* ({ payload }) {
+		console.log(payload,'userplanpppppp')
+		try {
+			console.log(payload,'payload-request')
+			const user = yield call(JwtAuthService.allplans, payload);
+			console.log(user.success,'allplans999999')
+			if (user && user.success == true) {
+				yield put(PlansSuccess(user));
+				// payload.route.push('/app/dashboards');
+				notification['success']({
+					message: 'Pay successfully',
+					description: '',
+				});
+			} else {
+				yield put(PlansFailed(user.message));
+				notification['error']({
+					message: user.message,
+					description: '',
+				});
+			}
+		} catch (error) {
+			yield put(PlansFailed(error));
+
+		}
+	});
+}
+
+
 export function* verifiedOtp() {
 	yield takeEvery(VERIFY, function* ({ payload }) {
 		try {
@@ -143,7 +211,7 @@ export function* verifiedOtp() {
 					message: 'Registration Successfull',
 					description: '',
 				});
-				payload.route.push('/auth/login-1');
+				payload.route.push('/app/dashboards');
 			} else {
 				yield put(verifyFailed(user.message));
 				notification['error']({
@@ -161,6 +229,7 @@ export function* verifiedLoginOtp() {
 	yield takeEvery(VERIFY_LOGIN, function* ({ payload }) {
 		try {
 			const user = yield call(JwtAuthService.loginverify, payload.request)
+		
 			if (user.success) {
 				yield put(verifyLoginSuccess(user));
 				notification['success']({
@@ -326,6 +395,8 @@ export default function* rootSaga() {
 		fork(sendLink),
 		fork(signOut),
 		fork(signUp),
+		fork(ContactApi),
+		fork(plan),
 		fork(verifiedOtp),
 		fork(verifiedLoginOtp),
 		fork(passwordRequest),

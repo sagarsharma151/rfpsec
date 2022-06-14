@@ -1,7 +1,7 @@
 import { all, takeEvery, put, fork, call, takeLatest } from 'redux-saga/effects';
 import { notification } from 'antd';
-import { changeProfilePasswordFailed, uploadImageFailed, changeProfilePasswordSuccess, deleteUsersFailed, deleteUsersSuccess, profileGetUsersFailed, profileGetUsersSuccess, profileUserAddFailed, profileUserAddSuccess, updateAddProfileFailed, updateAddProfileSuccess, uploadImageSuccess } from "redux/actions/profile";
-import { AUTH_TOKEN, CHANGE_PROFILE_PASSWORD, DELETE_REQUEST, PROFILE_ADD_USER, PROFILE_GET_USER, UPDATE_ADDUSER_PROFILE, UPLOAD_IMAGE } from "redux/constants/Auth";
+import {SignUpDataSuccess,SignUpDataFailed,UserStateSuccess,UserStateFaild,ListOfSubscriptionPlanSuccess,ListOfSubscriptionPlanFailed,StateDetails,StateDetailsSuccess,StateDetailsFaild, changeProfilePasswordFailed, uploadImageFailed, changeProfilePasswordSuccess, deleteUsersFailed, deleteUsersSuccess, profileGetUsersFailed, profileGetUsersSuccess, profileUserAddFailed, profileUserAddSuccess, updateAddProfileFailed, updateAddProfileSuccess, uploadImageSuccess } from "redux/actions/profile";
+import {SIGNUP_DATA,USERS_STATES,SUBSCRIPTION_PLAN,STATE_DEATILS, AUTH_TOKEN, CHANGE_PROFILE_PASSWORD, DELETE_REQUEST, PROFILE_ADD_USER, PROFILE_GET_USER, UPDATE_ADDUSER_PROFILE, UPLOAD_IMAGE } from "redux/constants/Auth";
 import JwtAuthService from "services/JwtAuthService";
 import Swal from 'sweetalert2';
 
@@ -52,8 +52,87 @@ export function* watchRequest() {
 	yield takeLatest(PROFILE_GET_USER, fetchAddUsers);
  }
 
+
+ export function* fetchSubscriptionPlan(action) {
+	try {
+		const users = yield call(JwtAuthService.getSubscriptionPlan);
+		console.log(users,'userdata')
+		if(users){
+		
+			yield put(ListOfSubscriptionPlanSuccess(users));
+		}else{
+			yield put(ListOfSubscriptionPlanFailed(users.message));
+		}
+	} catch (error) {
+		yield put(ListOfSubscriptionPlanFailed(error.message));
+	}
+ }
+
+export function* planRequest() {
+	yield takeLatest(SUBSCRIPTION_PLAN, fetchSubscriptionPlan);
+ }
+
+
+ export function* fetchStateDetails(action) {
+	try {
+		// const users = yield call(JwtAuthService.stateUpdate,action);
+		if(action){
+		
+			yield put(StateDetailsSuccess(action));
+		}else{
+			yield put(StateDetailsFaild(action.message));
+		}
+	} catch (error) {
+		yield put(StateDetailsFaild(error.message));
+	}
+ }
+
+export function* StateRequest() {
+	yield takeLatest(STATE_DEATILS, fetchStateDetails);
+ }
+
+ export function* signUpformData(action) {
+	console.log(action,'SIGNUP_DATA')
+	try {
+		// const users = yield call(action);
+		console.log(action,'SIGNUP_DATA')
+		// console.log(users,'SIGNUP_DATA')
+		if(action){
+			console.log(action,'SIGNUP_DATA')
+			yield put(SignUpDataSuccess(action));
+		}else{
+			yield put(SignUpDataFailed(action.message));
+		}
+	} catch (error) {
+		yield put(SignUpDataFailed(error.message));
+	}
+ }
+
+ export function* SignupdataRequest() {
+	yield takeLatest(SIGNUP_DATA, signUpformData);
+ }
+
+
+
+ export function* fetchUserState(action) {
+	try {
+		// const users = yield call(JwtAuthService.stateUpdate,action);
+		if(action){
+		
+			yield put(UserStateSuccess(action));
+		}else{
+			yield put(UserStateFaild(action.message));
+		}
+	} catch (error) {
+		yield put(UserStateFaild(error.message));
+	}
+ }
+
+export function* UserStateRequest() {
+	yield takeLatest(USERS_STATES, fetchUserState);
+ }
  export function* updateAddProfile() {
-	yield takeEvery(UPDATE_ADDUSER_PROFILE, function* ({ payload }) {
+	yield takeEvery(UPDATE_ADDUSER_PROFILE, function* (payload) {
 console.log('payload', payload)
 		try {
 			const user = yield call(JwtAuthService.updateAddProfile, payload.request);
@@ -159,5 +238,9 @@ export default function* rootSaga() {
 		fork(deleteUsers),
 		fork(changeProfilePassword),
 		fork(uploadImages),
+		fork(StateRequest),
+		fork(planRequest),
+		fork(UserStateRequest),
+		fork(SignupdataRequest),
 	]);
 }

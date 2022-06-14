@@ -4,26 +4,30 @@
     /* justify-content: center; */
     display: flex;
     align-items: center;
+    margin-top: 25px;
+
 }
 .subscription-card{
     width: 100%;
     height: 100%;
-    background: #F7F8FF;
+  
     border-radius: 10px;
     border: none;
+    padding-right: 0 !important;
 }
-.plan-text{
-    margin-bottom: 0;
+.subscription-card.ant-card-body{
+    padding-right: 0 !important;
+}
+.subscription-background{
+    background: #F7F8FF;
+}
+.contact-text{
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 30px;
-text-align: left;
-/* identical to box height */
-
-
-color: #000000;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 46px;
+    color: #000000;
 }
 .para-div-main{
     text-align: left;
@@ -86,7 +90,7 @@ text-align: left;
     color: #fff;
 }
 .card-backgrounds{
-    background: url('../../../../../assets/images/Group\ 1123.png');
+    background: url('../../../../assets/images/Group\ 1123.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -128,12 +132,10 @@ text-align: right;
 }
 .annually{
     font-size: 18px;
-    margin-right: 10px;
 }
 .monthly{
     font-size: 18px; 
     color: #D35400;
-    margin-right: 10px;
 }
 .discount-para-div{
     text-align: right;
@@ -211,11 +213,124 @@ text-align: left;
     margin-top: 31px;
 }
 
-.contact-icon-page{
+.react-tel-input .form-control{
+width:100% !important;
+height: 51px !important;
+border: 1px solid #8692A6 !important;
+border-radius: 6px !important;
+background: #F6F8FF !important;
+}
+.receipt{
+    margin-bottom: 0;
+}
+
+.contact-btn{
+    background-color: #00BE52;
+    border-radius: 6px !important;
+}
+
+.contact-btn-div{
+    width: 426px;
+    margin: auto;
+}
+
+.contact-main-heading{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 37px;
+    color: #000000;
+}
+.rectangle-img-div-contact{
+width: 54px;
+height: auto;
+// margin-top: 18px;
+}
+.icon-contact{
     width: 100%;
     height: auto;
 }
-.contact-img-div-main{
-    width: 98px;
-    margin-top: 33px;
+
+.contact-text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 23px;
+/* or 164% */
+
+display: flex;
+align-items: center;
+
+color: #263238;
+margin-bottom: 0 !important;
+
+}
+.contact-icon-div{
+    width: 100px;
+    border-right: 1px solid #8692A6;
+}
+
+.para-div-side{
+    padding: 12px;
+}
+
+.link-help-center{
+    margin-top: 20px;
+}
+.genpact-div{
+    width: 424px;
+background: #F5F5F5;
+border: 1px solid #8692A6;
+border-radius: 6px;
+margin-top: 22px;
+}
+.genpact-para-div{
+    padding: 12px;
+}
+.genpact-para{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.marketing-para{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 23px;
+/* or 164% */
+
+display: flex;
+align-items: center;
+margin-bottom: 0;
+margin-top: 10px;
+color: #8692A6;
+}
+
+.input-field-contact{
+    border: 1px solid #8692A6;
+    border-radius: 6px !important;
+    background: #F6F8FF !important;
+    height: 51px !important;
+}
+
+.input-field-phone-contact{
+    height: 51px !important;
+}
+
+.thankumsg{
+    width: 60%;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    /* height: 102px; */
+    padding: 34px;
+}
+
+.thanku-head{
+    color:#000000;
+    text-align: center;
 }

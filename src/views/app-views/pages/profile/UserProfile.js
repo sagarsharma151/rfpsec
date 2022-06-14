@@ -3,6 +3,7 @@ import { Row, Col, Tabs } from 'antd';
 import Profile from './tabs/Profile';
 import Users from './tabs/Users';
 import Subscription from './tabs/Subscription';
+import Multistep from '../../../auth-views/authentication/register-2/Multistep'
 import "./UserProfile.css"
 import SettingProfile from './tabs/Settings';
 
@@ -19,7 +20,7 @@ const UserProfile = () => {
                 <div className="card-container">
                     <Row gutter={[16, 16]}>
                         <Col span={24}>
-                            <Tabs defaultActiveKey="1" type="card" onChange={callback} className='active_tab'>
+                            <Tabs defaultActiveKey="3" type="card" onChange={callback} className='active_tab'>
                                 <TabPane tab="Profile" key="1" style={{ marginBottom: 0 }} className='tabpannel'>
                                     <Profile />
                                 </TabPane>
@@ -27,7 +28,7 @@ const UserProfile = () => {
                                     <Users />
                                 </TabPane>
                                 <TabPane tab="Subscription" key="3">
-                                   <Subscription />
+                                   <Multistep />
                                 </TabPane>
                                 <TabPane tab="Settings" key="4">
                                     <SettingProfile />

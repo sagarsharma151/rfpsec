@@ -1,4 +1,4 @@
-import { AUTH_TOKEN, CHANGE_PROFILE_PASSWORD, CHANGE_PROFILE_PASSWORD_FAILED, CHANGE_PROFILE_PASSWORD_SUCCESS, DELETE_FAILED, DELETE_REQUEST, DELETE_SUCCESS, PROFILE_ADD_USER, PROFILE_ADD_USER_FAILED, PROFILE_ADD_USER_SUCCESS, PROFILE_GET_USER, PROFILE_GET_USER_FAILED, PROFILE_GET_USER_SUCCESS, UPDATE_ADDUSER_PROFILE, UPDATE_ADDUSER_PROFILE_FAILED, UPDATE_ADDUSER_PROFILE_SUCCESS, UPLOAD_IMAGE, UPLOAD_IMAGE_FAILED, UPLOAD_IMAGE_SUCCESS } from "redux/constants/Auth";
+import {STATE_DEATILS,STATE_DEATILS_SUCCESS,STATE_DEATILS_FAILED, AUTH_TOKEN, CHANGE_PROFILE_PASSWORD, CHANGE_PROFILE_PASSWORD_FAILED, CHANGE_PROFILE_PASSWORD_SUCCESS, DELETE_FAILED, DELETE_REQUEST, DELETE_SUCCESS, PROFILE_ADD_USER, PROFILE_ADD_USER_FAILED, PROFILE_ADD_USER_SUCCESS, PROFILE_GET_USER, PROFILE_GET_USER_FAILED, PROFILE_GET_USER_SUCCESS, UPDATE_ADDUSER_PROFILE, UPDATE_ADDUSER_PROFILE_FAILED, UPDATE_ADDUSER_PROFILE_SUCCESS, UPLOAD_IMAGE, UPLOAD_IMAGE_FAILED, UPLOAD_IMAGE_SUCCESS } from "redux/constants/Auth";
 
 const initState = {
 	loading: false,
@@ -46,6 +46,30 @@ const Profile = (state = initState, action) => {
 				...state,
 				loading: true,
 				user: action.user,
+			}
+		}
+		case STATE_DEATILS:{
+			console.log(action,'alfjlkdsjfldsjlfjsdlfjls')
+			return {
+				...state,
+				loading: true,
+				user: action,
+			}
+		}
+		case STATE_DEATILS_SUCCESS:{
+			console.log(action.user,'STATE_DEATILS_SUCCESSalfjlkdsjfldsjlfjsdlfjls')
+			return {
+				...state,
+				loading: false,
+				user: action.user,
+			}
+		}
+		case STATE_DEATILS_FAILED:{
+			console.log(action,'alfjlkdSTATE_DEATILS_FAILEDsjfldsjlfjsdlfjls')
+			return {
+				...state,
+				loading: false,
+				err: action.error
 			}
 		}
             case PROFILE_GET_USER_SUCCESS:{
